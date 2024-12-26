@@ -1,23 +1,26 @@
 package utilities;
 
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import java.io.*;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 
-public class ExcelToFeature {
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-	public static void main(String[] args)  {
+public class Graph {
+	
+	public static void main(String[] args) {
 		String excelFilePath = "C:\\Sahana NUMPY NINJA SDET\\Questers_DsAlgo_Scenarios.xlsx";
-		String featureFilePath = "C:\\Sahana NUMPY NINJA SDET\\workspace\\DsAlgoNew\\src\\test\\resources\\features\\Home.feature";
+		String featureFilePath = "C:\\Sahana NUMPY NINJA SDET\\gitsss\\NewPracDsAlgo\\New folder\\NewPracticeDsAlgo\\src\\test\\resources\\features\\Graph.feature";
 
 		try (FileInputStream fis = new FileInputStream(excelFilePath);
 				Workbook workbook = new XSSFWorkbook(fis);
 				BufferedWriter writer = new BufferedWriter(new FileWriter(featureFilePath))) {
 
-			Sheet sheet = workbook.getSheetAt(0); // Read the first sheet
-			writer.write("Feature: Home functionality\n\n");
+			Sheet sheet = workbook.getSheetAt(8); // Read the first sheet
+			writer.write("Feature: Stack functionality\n\n");
 
 			for (int i = 1; i <= sheet.getLastRowNum(); i++) { // Skip header row
 				Row row = sheet.getRow(i);
@@ -31,7 +34,7 @@ public class ExcelToFeature {
 				writer.write("    Scenario: " + scenario + "\n");
 				writer.write("    Given " + given + "\n");
 				writer.write("    When " + when + "\n");
-				writer.write("    Then " + then + "\n\n");
+				writer.write("    Then " + then + "\n");
 			}
 
 			System.out.println("Feature file generated successfully!");
@@ -40,4 +43,7 @@ public class ExcelToFeature {
 			e.printStackTrace();
 		}
 	}
+	
+	
+
 }

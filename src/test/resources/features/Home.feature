@@ -1,95 +1,75 @@
 Feature: Home functionality
 
     
-
     Scenario: Verify User is able to navigate to DsAlgo Application
     Given Empty browser open
     When The user enters the DsAlgo Url
-    Then 
-
+    Then the user should able to land on DsAlgo portal
     Scenario: verify that user is able to navigate to homepage when clicked on getstarted button
     Given the user enters the DsAlgo Url
     When The user click on Getstarted button
-    Then 
-
-    Scenario: Verify that the user sees six options under the Data Structure dropdown before logging in
-    Given the user navigates to the DSAlgo application
-    When The user clicks on the "Get Started" button
-    Then the user clicks on the Data Structure button
-
+    Then the user navigates to DSAlgo home page and verifies whether the home page is displayed
     Scenario: Verify that the user is able to Navigate to Register page
     Given the user navigates to the DSAlgo homepage
     When The user clicks on the "Register" button
-    Then 
-
+    Then the user should be navigated to the Register page and confirm its presence with the displayed text
     Scenario: Verify that the user is able to Navigate to Login page
     Given the user navigates to the DSAlgo homepage
     When The user clicks on the Login button
-    Then 
-
-    Scenario: Verify the error message when the user clicked on GetStarted button of
- DataStructures-Introduction without signing in
+    Then the user should be navigated to the Login page and confirm its presence with the displayed text
+    Scenario: Verify the error message when the user clicked on GetStarted button of DataStructures-Introduction without signing in
     Given the user navigates to DSAlgo homepage
     When The user clicks on the GetStarted button under DataStructures-Introduction
-    Then 
-
+    Then the user should see an error message stating You are not signed in
     Scenario: Verify the error message when the user clicked on  GetStarted button of Array without signing in
     Given the user is on the DSAlgo homepage
     When The user clicks on the GetStarted button under Array
-    Then 
-
+    Then the user should see an error message stating You are not signed in
     Scenario: Verify the error message when the user clicked on GetStarted button of LinkedList without signing in
     Given the user is on the DSAlgo homepage
     When The user clicks on the GetStarted button under LinkedList 
-    Then 
-
+    Then the user should see an error message stating You are not signed in
     Scenario: Verify error message when the user clicked on GetStarted button of Stack without signing in
     Given the user is on the DSAlgo homepage
     When the user clicks on the GetStarted button under Stack
-    Then 
-
+    Then the user should see an error message stating You are not signed in
     Scenario: Verify error message when the user clicked on GetStarted button of Queue without signing in
     Given the user is on the DSAlgo homepage
     When the user clicks on the GetStarted button under Queue
-    Then 
-
+    Then the user should see an error message stating You are not signed in
     Scenario: Verify error message when the user clicked on GetStarted button of Tree without signing in
     Given the user is on the DSAlgo homepage
     When the user clicks on the GetStarted button under Tree
-    Then 
-
+    Then the user should see an error message stating You are not signed in
     Scenario: Verify error message when the user clicked on GetStarted button of Graph without signing in
     Given the user is on the DSAlgo homepage
     When the user clicks on the GetStarted button under Graph
-    Then 
-
+    Then the user should see an error message stating You are not signed in
+    Scenario: Verify that the user sees six options under the Data Structure dropdown before logging in
+    Given the user is on the DSAlgo homepage
+    When the user clicks on the Data Structure button
+    Then the user should see six options: "Arrays," "Linked List," "Stack," "Queue," "Tree," and "Graph" under the Data Structure dropdown.
     Scenario: Verify error message when selecting "Arrays" from the Data Structures dropdown without signing in
     Given the user is on the DSAlgo homepage
-    When the user clicks on the "Data Structures" dropdown
-    Then the user selects the "Arrays" option
-
+    When the user selects "Arrays" option under "Data Structures" dropdown
+    Then the user should see an error message stating, "You are not logged in
     Scenario: Verify error message when selecting LinkedList from the Data Structures dropdown without signing in
     Given the user is on the DSAlgo homepage
-    When the user clicks on the "Data Structures" dropdown
-    Then the user selects the LinkedList option
-
+    When the user selects  LinkedList option under "Data Structures" dropdown
+    Then the user should see an error message stating, "You are not logged in
     Scenario: Verify error message when selecting Stack from the Data Structures dropdown without signing in
     Given the user is on the DSAlgo homepage
-    When the user clicks on the "Data Structures" dropdown
-    Then the user selects the Stack option
-
+    When the user selects Stack option under "Data Structures" dropdown
+    Then the user should see an error message stating, "You are not logged in
     Scenario: Verify error message when selecting Queue from the Data Structures dropdown without signing in
     Given the user is on the DSAlgo homepage
-    When the user clicks on the "Data Structures" dropdown
-    Then the user selects the Queue option
-
+    When the user selects Queue option under "Data Structures" dropdown
+    Then the user should see an error message stating, "You are not logged in
     Scenario: Verify error message when selecting Tree from the Data Structures dropdown without signing in
     Given the user is on the DSAlgo homepage
-    When the user clicks on the "Data Structures" dropdown
-    Then the user selects the Tree option
-
+    When the user selects Tree option under "Data Structures" dropdown
+    Then the user should see an error message stating, "You are not logged in
     Scenario: Verify error message when selecting Graph from the Data Structures dropdown without signing in
     Given the user is on the DSAlgo homepage
-    When the user clicks on the "Data Structures" dropdown
-    Then the user selects the Graph option
-
+    When the user selects Graph option under "Data Structures" dropdown
+    Then the user should see an error message stating, "You are not logged in
