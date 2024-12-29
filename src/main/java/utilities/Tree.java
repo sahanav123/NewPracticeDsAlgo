@@ -1,23 +1,26 @@
 package utilities;
 
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import java.io.*;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 
-public class ExcelToFeature {
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class Tree {
 
 	public static void main(String[] args)  {
-		String excelFilePath = "C:\\Sahana NUMPY NINJA SDET\\Questers_DsAlgo_Scenarios.xlsx";
-		String featureFilePath = "C:\\Sahana NUMPY NINJA SDET\\workspace\\DsAlgoNew\\src\\test\\resources\\features\\Home.feature";
+		String excelFilePath = "C:\\Users\\kdatt\\Downloads\\Questers_DsAlgo_Scenarios.xlsx";
+		String featureFilePath = "C:\\Users\\kdatt\\eclipse-workspace-12092024\\NewPracticeDsAlgo\\src\\test\\resources\\features\\Tree.feature";
 
 		try (FileInputStream fis = new FileInputStream(excelFilePath);
 				Workbook workbook = new XSSFWorkbook(fis);
 				BufferedWriter writer = new BufferedWriter(new FileWriter(featureFilePath))) {
 
-			Sheet sheet = workbook.getSheetAt(0); // Read the first sheet
-			writer.write("Feature: Home functionality\n\n");
+			Sheet sheet = workbook.getSheetAt(10); // Read the first sheet
+			writer.write("Feature: Tree functionality\n\n");
 
 			for (int i = 1; i <= sheet.getLastRowNum(); i++) { // Skip header row
 				Row row = sheet.getRow(i);
@@ -41,3 +44,5 @@ public class ExcelToFeature {
 		}
 	}
 }
+
+
